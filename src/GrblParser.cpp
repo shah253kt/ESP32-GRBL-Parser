@@ -15,11 +15,11 @@
 namespace
 {
   constexpr auto MAX_UPDATE_DURATION = 100;
-  constexpr auto COMMAND_RESPONSE_TIMEOUT = 500;
+  constexpr auto COMMAND_RESPONSE_TIMEOUT = 100;
 
-  // Limits the status report query to 5Hz, as recommended by Grbl.
-  constexpr auto STATUS_REPORT_MIN_INTERVAL_MS = 200;
-  constexpr auto STATUS_REPORT_DEFAULT_INTERVAL_MS = 500;
+  // Limits the frequency of status report query. Use setStatusReportInterval to set custom interval.
+  constexpr auto STATUS_REPORT_MIN_INTERVAL_MS = 50;
+  constexpr auto STATUS_REPORT_DEFAULT_INTERVAL_MS = 200;
 } // namespace
 
 namespace RegEx
