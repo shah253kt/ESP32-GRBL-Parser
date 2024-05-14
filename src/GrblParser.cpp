@@ -60,7 +60,7 @@ void GrblParser::update()
 
 void GrblParser::checkIncomingData()
 {
-  auto updateStartsAt = millis();
+  const auto updateStartsAt = millis();
   while (available() > 0 && millis() - updateStartsAt < MAX_UPDATE_DURATION)
   {
     encode(read());
@@ -70,7 +70,7 @@ void GrblParser::checkIncomingData()
 void GrblParser::encode(const char c)
 {
   m_data += c;
-  
+
   if (c == '\n')
   {
     processData();

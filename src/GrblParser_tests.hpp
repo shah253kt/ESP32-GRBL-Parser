@@ -34,7 +34,7 @@ public:
     MOCK_METHOD(void, write, (char c), (override));
 };
 
-TEST_P(GrblParserParameterizedTest, correctly_evaluates_input_data)
+TEST_P(GrblParserParameterizedTest, data_is_processed_when_newline_is_received)
 {
     // ARRANGE
     MockGrblParser grblParser;
@@ -82,4 +82,11 @@ TEST(encode, accepts_characters)
 
     // ASSERT
     ASSERT_EQ(grblParser.data(), myData);
+}
+
+TEST(processData, processOkAndErrorResponse)
+{
+    // ARRANGE
+    // ACT
+    // ASSERT
 }

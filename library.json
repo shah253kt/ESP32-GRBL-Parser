@@ -5,7 +5,7 @@
     "keywords": "grbl, esp32, string, websocket, serial, grbl interface",
     "repository": {
         "type": "git",
-        "url": "https://github.com/shah253kt/"
+        "url": "https://github.com/shah253kt/ESP32-GRBL-Parser"
     },
     "authors": [
         {
@@ -15,7 +15,7 @@
         }
     ],
     "license": "MIT",
-    "homepage": "https://github.com/shah253kt/",
+    "homepage": "https://github.com/shah253kt/ESP32-GRBL-Parser",
     "frameworks": "arduino",
     "platforms": "espressif32"
 }

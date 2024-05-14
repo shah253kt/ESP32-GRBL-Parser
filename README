@@ -1,0 +1,2 @@
+## Description
+This is an interface library to communicate with a Grbl-compatible devices. Built for ESP32 specifically.
