@@ -79,7 +79,7 @@ void WebsocketGrblParser::update()
   GrblParser::update();
 
   // Check if response is not received
-  if (isResponseTimeout())
+  if (isResponseTimeout(LAST_RESPONSE_TIMEOUT))
   {
     std::ignore = connect();
   }
