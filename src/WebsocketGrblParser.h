@@ -12,6 +12,7 @@ public:
   explicit WebsocketGrblParser(const char *host, int port, const char *url);
 
   [[nodiscard]] bool isConnected() const;
+  [[nodiscard]] bool isResponseTimeout() const;
   void update();
 
 private:

@@ -47,6 +47,11 @@ WebsocketGrblParser::WebsocketGrblParser(const char *host, int port,
 
 bool WebsocketGrblParser::isConnected() const { return m_connected; }
 
+bool WebsocketGrblParser::isResponseTimeout() const
+{
+  return millis() - m_lastResponseReceivedAt >= LAST_RESPONSE_TIMEOUT;
+}
+
 void WebsocketGrblParser::update()
 {
   m_client.poll();
@@ -74,9 +79,8 @@ void WebsocketGrblParser::update()
   GrblParser::update();
 
   // Check if response is not received
-  if (millis() - m_lastResponseReceivedAt >= LAST_RESPONSE_TIMEOUT)
+  if (isResponseTimeout())
   {
-    m_connected = false;
     std::ignore = connect();
   }
 }
@@ -115,8 +119,9 @@ bool WebsocketGrblParser::connect()
   if (!m_client.connect(m_host, m_port, m_url))
   {
     Serial.println("FAILED");
-    
-    if (++retryCount >= MAX_RETRY_CONNECTION_BEFORE_CLOSING_CONNECTION) {
+
+    if (++retryCount >= MAX_RETRY_CONNECTION_BEFORE_CLOSING_CONNECTION)
+    {
       Serial.println("Closing connection.");
       m_client.close();
       retryCount = 0;
