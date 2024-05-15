@@ -76,6 +76,7 @@ void WebsocketGrblParser::update()
   // Check if response is not received
   if (millis() - m_lastResponseReceivedAt >= LAST_RESPONSE_TIMEOUT)
   {
+    m_connected = false;
     std::ignore = connect();
   }
 }

@@ -613,3 +613,8 @@ void GrblParser::appendValue(char indicator, int value, char postpend)
 {
   m_stringStream << indicator << value << postpend;
 }
+
+uint32_t GrblParser::lastStatusReportRequestedAt()
+{
+  return m_lastStatusReportRequestedAt;
+}

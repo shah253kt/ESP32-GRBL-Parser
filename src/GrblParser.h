@@ -120,6 +120,8 @@ protected:
   [[nodiscard]] virtual uint16_t available() = 0;
   [[nodiscard]] virtual char read() = 0;
   virtual void write(char c) = 0;
+
+  [[nodiscard]] uint32_t lastStatusReportRequestedAt();
 };
 
 #endif
