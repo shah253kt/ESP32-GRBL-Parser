@@ -47,9 +47,9 @@ WebsocketGrblParser::WebsocketGrblParser(const char *host, int port,
 
 bool WebsocketGrblParser::isConnected() const { return m_connected; }
 
-bool WebsocketGrblParser::isResponseTimeout() const
+bool WebsocketGrblParser::isResponseTimeout(const int timeout) const
 {
-  return millis() - m_lastResponseReceivedAt >= LAST_RESPONSE_TIMEOUT;
+  return millis() - m_lastResponseReceivedAt >= timeout;
 }
 
 void WebsocketGrblParser::update()
