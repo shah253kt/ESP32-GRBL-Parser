@@ -1,6 +1,5 @@
 #include "WebsocketGrblParser.h"
 
-#include "SafeString.h"
 #include "WebsocketDebugger.hpp"
 #include "GrblCommands.h"
 
