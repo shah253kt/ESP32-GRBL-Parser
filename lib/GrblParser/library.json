@@ -1,6 +1,6 @@
 {
     "name": "Grbl Parser",
-    "version": "2.0.4",
+    "version": "2.0.5",
     "description": "An interface to a Grbl-compatible devices. Tested with FluidNC. Built specifically for ESP32.",
     "keywords": "grbl, esp32, string, websocket, serial, grbl interface",
     "repository": {
@@ -15,7 +15,6 @@
         }
     ],
     "dependencies": {
-        "google/googletest": "^1.12.1",
         "links2004/WebSockets": "^2.4.1",
         "nickgammon/Regexp": "^0.1.0",
         "shah253kt/C++11 Utilities": "^1.0.3"
